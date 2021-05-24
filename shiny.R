@@ -8,7 +8,7 @@ ui <- fluidPage(
 
   sidebarLayout(
     sidebarPanel(
-      helpText('Creat the number of release film or film in boxoffice per year(2019 ~ 2020)')
+      helpText('Creat the number of release film or film in boxoffice per year(2019 ~ 2020)'),
     selectInput('var',
                  label = 'choose a case to display',
                  choices = c('release film' , 'film in boxoffice', 'unique film in boxoffice'),
