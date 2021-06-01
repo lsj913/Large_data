@@ -28,9 +28,9 @@ server <- function(input, output) {
                    'film in boxoffice' = release_type,
                    'unique film in boxoffice' = release_type_unique)
     X <- switch(input$var,
-                   'release film' = release$year,
-                   'film in boxoffice' = release_type$year,
-                   'unique film in boxoffice' = release_type_unique$year)
+                   'release film' = as.factor(release$year),
+                   'film in boxoffice' = as.factor(release_type$year),
+                   'unique film in boxoffice' = as.factor(release_type_unique$year))
     Y <- switch(input$var,
                     'release film' = release$N,
                     'film in boxoffice' = release_type$N,
