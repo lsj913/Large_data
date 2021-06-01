@@ -1,5 +1,5 @@
 library(shiny)
-library(ggplot2)
+library(tidyverse)
 
 release <- read.csv('Data/release.csv')
 release_type <- read.csv('Data/release_type.csv')
