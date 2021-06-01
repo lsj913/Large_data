@@ -19,7 +19,6 @@ ui <- fluidPage(
   )
 )
 
-
 server <- function(input, output) {
   output$N_film <- renderPlot({
     data <- switch(input$var,
@@ -39,9 +38,9 @@ server <- function(input, output) {
                    'film in boxoffice' = release_type$type,
                    'unique film in boxoffice' = release_type_unique$type)
     data %>% ggplot(mapping = aes(x = X, y = Y, fill = Fill)) + geom_bar(stat = 'identity', position = 'dodge') + 
-      scale_fill_brewer(palette = "Pastel1")+ ylim(0, 140) +
-      geom_text(aes(label = Y), vjust = 1.5, colour = "black", position = position_dodge(1), size = 3) +
-      theme(plot.title = element_text(size = 15), axis.title = element_text(size = 10), axis.text.x = element_text(size = 10))
+      scale_fill_brewer(palette = "Pastel1") + ylim(0, 140) + labs(x = 'Year', y = 'N') +
+      geom_text(aes(label = Y), vjust = 1.5, colour = "black", position = position_dodge(1), size = 5) +
+      theme(axis.title = element_text(size = 13), axis.text = element_text(size = 13), legend.title = element_text(size = 13), legend.text = element_text(size = 12))
   })
   }
   
