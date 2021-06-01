@@ -1,7 +1,9 @@
 library(shiny)
 library(ggplot)
-library(data.table)
 
+release <- read.csv('Data/release.csv')
+release_type <- read.csv('Data/release_type.csv')
+release_type_unique <- read.csv('Data/release_type_unique.csv')
 
 ui <- fluidPage(
   titlePanel("The number of film"),
